@@ -1,5 +1,7 @@
 package year2018.month01;
 
+import helper.ArrayHelper;
+
 /**
  * 每天一个经典算法学习
  * 插入排序
@@ -7,10 +9,13 @@ package year2018.month01;
  * 2018/01/15
  */
 public class InsertionSort {
+
     public static void main(String[] args) {
         // 待排序数组
-        int[] nums = {99,98,20,10,56};
-        // j 指出正在插入到手中的"当前牌"
+        int[] nums = ArrayHelper.getRandomInt(100,0,99);
+        System.out.println("原数组：");
+        ArrayHelper.printArray(nums);
+
         /**
          * for 表示迭代开始
          * 包含 nums[0..j-1] 表示手中已排好序的牌
@@ -36,17 +41,16 @@ public class InsertionSort {
             nums[i+1] = key;
         }
 
-        for (int k :
-                nums) {
-            System.out.print(k+" ");
-        }
+        System.out.println("排序后");
+        ArrayHelper.printArray(nums);
 
-
-        int[] nums2 = {31,59,41,26,41,58};
 //        ---------------------------------------------
         //反向实现
-        System.out.println();
+        int[] nums2 = ArrayHelper.getRandomInt(10,100,150);
         System.out.println("反向实现");
+        System.out.println("原数组");
+        ArrayHelper.printArray(nums2);
+
 
         for (int i = 1; i < nums2.length; i++) {
             int key = nums2[i];
@@ -58,9 +62,7 @@ public class InsertionSort {
             nums2[j+1] = key;
         }
 
-        for (int k :
-                nums2) {
-            System.out.print(k+" ");
-        }
+        System.out.println("排序后");
+        ArrayHelper.printArray(nums2);
     }
 }
