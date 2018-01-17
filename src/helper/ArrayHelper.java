@@ -45,7 +45,7 @@ public class ArrayHelper {
         run.run(A);
         Long end = System.currentTimeMillis();
 
-        System.out.println(run.getClass().getSimpleName()+" 用时：" + (end-begin)/1000.0 + "s");
+        System.out.println(run.getClass().getSimpleName()+" 用时：" + (end-begin) + " ms");
         if(isSorted(A)){
             System.out.println("排序成功");
         }else{
