@@ -35,4 +35,35 @@ public class ArrayHelper {
         System.out.println();
     }
 
+    /**
+     * 测试运行性能
+     * @param run
+     * @param A
+     */
+    public static void testPerformance(RunInterface run,int[] A){
+        Long begin = System.currentTimeMillis();
+        run.run(A);
+        Long end = System.currentTimeMillis();
+
+        System.out.println(run.getClass().getSimpleName()+" 用时：" + (end-begin) + "ms");
+        if(isSorted(A)){
+            System.out.println("排序成功");
+        }else{
+            System.out.println("排序失败");
+        }
+        System.out.println();
+    }
+
+    /**
+     * 检查是否排序
+     */
+    public static boolean isSorted (int[] A){
+        for(int i = 0;i<A.length-1;i++){
+            if(A[i]>A[i+1]){
+                return false;
+            }
+        }
+        return true;
+    }
+
 }

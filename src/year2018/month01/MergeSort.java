@@ -1,6 +1,7 @@
 package year2018.month01;
 
 import helper.ArrayHelper;
+import helper.RunInterface;
 
 /**
  * 每天一个算法学习
@@ -8,7 +9,7 @@ import helper.ArrayHelper;
  * MergeSort
  * 2018/01/16
  */
-public class MergeSort {
+public class MergeSort implements RunInterface {
 
 
     /*
@@ -140,18 +141,8 @@ public class MergeSort {
        }
    }
 
-    public static void main(String[] args) {
-//        int[] a = {1,3,5,7,9,2,4,6,8,10};
-//        merge(a,0,4,9);
-//        for (int i = 0; i < a.length; i++) {
-//            System.out.print(a[i]+" ");
-//        }
-//        System.out.println();
-        int[] a = ArrayHelper.getRandomInt(10,0,20);
-        ArrayHelper.printArray(a);
-        mergeSort(a,0,9);
-        ArrayHelper.printArray(a);
+    @Override
+    public void run(int[] A) {
+        mergeSort(A,0,A.length-1);
     }
-
-
 }
