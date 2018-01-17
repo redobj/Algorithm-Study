@@ -85,6 +85,49 @@ public class MergeSort {
        }
    }
 
+    /**
+     * 归并 无哨兵写法
+     * @param A
+     * @param p
+     * @param q
+     * @param r
+     */
+   public static void mergeWithout(int A[], int p, int q, int r){
+       int[] arrL = new int[q-p+1];
+       int[] arrR = new int[r-q];
+
+       for(int i = 0;i<arrL.length;i++){
+           arrL[i] = A[p+i];
+       }
+
+       for (int i = 0; i < arrR.length; i++) {
+           arrR[i] = A[q+i+1];
+       }
+
+       int j = 0;
+       int k = 0;
+       for(int i = p;i<r+1;i++){
+           if(j == arrL.length){
+               A[i] = arrR[k];
+               k++;
+               continue;
+           }
+           if(k == arrR.length){
+               A[i] = arrL[j];
+               j++;
+               continue;
+           }
+           if(arrL[j]<arrR[k]){
+               A[i] = arrL[j];
+               j++;
+           }
+           else{
+               A[i] = arrR[k];
+               k++;
+           }
+       }
+
+   }
 
    // 递归分析成两两合并后再合并
    public static void mergeSort(int[] A,int p,int r){
@@ -93,7 +136,7 @@ public class MergeSort {
            int q = (p + r)/2;
            mergeSort(A,p,q);
            mergeSort(A,q+1,r);
-           merge(A,p,q,r);
+           mergeWithout(A,p,q,r);
        }
    }
 
@@ -104,9 +147,9 @@ public class MergeSort {
 //            System.out.print(a[i]+" ");
 //        }
 //        System.out.println();
-        int[] a = ArrayHelper.getRandomInt(3,0,3);
+        int[] a = ArrayHelper.getRandomInt(10,0,20);
         ArrayHelper.printArray(a);
-        mergeSort(a,0,2);
+        mergeSort(a,0,9);
         ArrayHelper.printArray(a);
     }
 
