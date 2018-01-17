@@ -7,6 +7,7 @@ import helper.RunInterface;
  * 每天一个算法学习
  * 选择排序
  * selectionSort
+ * 时间复杂度 O(n^2)
  * 2018/01/15 at night
  */
 public class SelectionSort implements RunInterface {

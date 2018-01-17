@@ -7,6 +7,7 @@ import helper.RunInterface;
  * 每天一个经典算法学习
  * 插入排序
  * insertionSort
+ * 时间复杂度 O(n^2)
  * 2018/01/15
  */
 public class InsertionSort implements RunInterface {

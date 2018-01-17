@@ -7,6 +7,7 @@ import helper.RunInterface;
  * 每天一个算法学习
  * 归并排序
  * MergeSort
+ * 时间复杂度O(nlog2 n)
  * 2018/01/16
  */
 public class MergeSort implements RunInterface {
