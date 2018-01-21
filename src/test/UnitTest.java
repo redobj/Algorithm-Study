@@ -27,12 +27,12 @@ public class UnitTest {
     @Test
     public void test2(){
         int[] random = ArrayHelper.getRandomInt(100,0,100);
-        ArrayHelper.testPerformance(new HeapSort(),random);
+        ArrayHelper.testPerformance(new BucketSortSimple(),random);
     }
 
     @Test
     public void test3(){
-        int[] random = ArrayHelper.getRandomInt(10000,0,10000);
+        int[] random = ArrayHelper.getRandomInt(100000,0,100000);
         ArrayHelper.testPerformance(new MergeSort(),random);
         random = ArrayHelper.getRandomInt(100000,0,100000);
         ArrayHelper.testPerformance(new ShellSort(),random);
@@ -40,5 +40,7 @@ public class UnitTest {
         ArrayHelper.testPerformance(new QuickSort(),random);
         random = ArrayHelper.getRandomInt(100000,0,100000);
         ArrayHelper.testPerformance(new HeapSort(),random);
+        random = ArrayHelper.getRandomInt(100000,0,100000);
+        ArrayHelper.testPerformance(new BucketSortSimple(),random);
     }
 }
